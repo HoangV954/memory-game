@@ -1,0 +1,118 @@
+@use "sass:math";
+
+.card-wrapper {
+    width: 235px;
+    height: 305px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid black;
+    position: relative;
+    user-select: none;
+    margin-bottom: 50px;
+    perspective: 1000px;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: blue;
+    width: 100%;
+    height: 100%;
+    background: url(../../assets/images/CardBack/card-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-back {
+    position: absolute;
+    transform: rotateY(180deg);
+    width: 100%;
+    height: 340px;
+    background: url(../../assets/images/CardBack/cardBack.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    left: 0;
+    z-index: -100;
+}
+
+.char-img {
+    position: relative;
+}
+
+.char-name {
+    position: absolute;
+    bottom: -40px;
+    display: block;
+    background-color: rgb(72, 55, 55);
+    padding: 10px;
+    width: 235px;
+    text-align: center;
+    color: rgb(253, 218, 82);
+    z-index: -3;
+    border-bottom: 3px solid rgb(11, 11, 11);
+    border-left: 3px solid rgb(17, 17, 17);
+    border-right: 3px solid rgb(19, 19, 19);
+}
+
+.cards-container {
+
+    $delayTimer: 1;
+    $maxCard: 4;
+    /* Max 5 cards per round */
+    $iteration: 1;
+
+    [class*="finished-entry"] {
+        animation-name: slideEntry;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }
+
+    // Apply animation-delay to each .finished-entry element
+
+    @for $i from $maxCard through 0 {
+
+        /* the below could be combined, but this is to show case scss if-else with number */
+        @if $i < 1 {
+            .finished-entry-#{$i} {
+                animation-delay: 0.05s;
+            }
+        }
+
+        @else {
+            .finished-entry-#{$i} {
+                animation-delay: #{calc(0.5 / $iteration)}s;
+            }
+
+            $iteration: $iteration + 1;
+        }
+
+    }
+}
+
+
+// Keyframes for staggered animation
+@keyframes slideEntry {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
