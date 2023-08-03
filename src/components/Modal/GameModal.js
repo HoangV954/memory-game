@@ -1,11 +1,7 @@
-import GameContext from "../Context/GameContext";
-import Button from "../Utils/Button";
 import { motion } from "framer-motion";
-import { useContext } from "react";
-import "./GameModal.scss"
-
+import "./GameModal.scss";
 export default function GameModal({ visible, content }) {
-    const { reset } = useContext(GameContext);
+
 
     if (!visible) return null;
 

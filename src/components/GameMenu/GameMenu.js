@@ -3,7 +3,7 @@ import GameContext from "../Context/GameContext";
 import { useContext } from "react";
 import useSound from 'use-sound';
 import hoverSound from "../../assets/sound/sound-hover.wav";
-import selectSound from "../../assets/sound/sound-select.wav"
+import selectSound from "../../assets/sound/sound-select.wav";
 
 
 
@@ -22,9 +22,12 @@ export default function GameMenu({ handleStartGame }) {
         <div className="game-menu">
             <p>Game Menu Ready!</p>
             <div className="btn-wrapper">
-                <Button name={"Easy"} onClick={(e) => { handleDifficulty(e) }} onMouseEnter={hover} onMouseLeave={() => stop()}></Button>
-                <Button name={"Medium"} onClick={(e) => { handleDifficulty(e) }} onMouseEnter={hover} onMouseLeave={() => stop()}></Button>
-                <Button name={"Hard"} onClick={(e) => { handleDifficulty(e) }} onMouseEnter={hover} onMouseLeave={() => stop()}></Button>
+                <Button name={"easy"} textContent="Easy" onClick={(e) => { handleDifficulty(e) }} onMouseEnter={hover} onMouseLeave={() => stop()}></Button>
+                <Button name={"medium"} textContent="Medium"
+                    onClick={(e) => { handleDifficulty(e) }} onMouseEnter={hover} onMouseLeave={() => stop()}></Button>
+                <Button name={"hard"}
+                    textContent="Hard"
+                    onClick={(e) => { handleDifficulty(e) }} onMouseEnter={hover} onMouseLeave={() => stop()}></Button>
             </div>
         </div>
     )

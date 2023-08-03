@@ -11,6 +11,7 @@
     align-items: center;
     background-color: rgb(0, 0, 0);
     box-shadow: rgba(0, 0, 0, 0.753) 0px 5px 15px;
+
 }
 
 .modal {
@@ -22,12 +23,49 @@
     justify-content: center;
     align-items: center;
     transition: transform 1s;
+
+    .logo-container {
+
+        animation: fade-in 10s ease;
+        cursor: pointer;
+
+        >.logo-text {
+            position: absolute;
+            top: 11%;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            color: transparent;
+            z-index: 100;
+            text-align: center;
+        }
+
+        >.logo {
+            position: absolute;
+            top: -15%;
+            z-index: 120;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+        }
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .modal-text {
-
     position: absolute;
-    top: 25%;
+    top: 45%;
     font-size: 70px;
     animation: focus-in-expand 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     word-spacing: 10px;
@@ -37,6 +75,7 @@
         0 0 7px #fff,
         0 0 10px #fff,
         0 0 21px #fff;
+    font-family: "fancy-norm";
 
     &.left {
         left: -25%;
@@ -58,13 +97,31 @@
             0 0 21px #fc0505;
     }
 
+    span {
+        font-family: "fancy-cap";
+    }
+
 }
 
+@keyframes focus-in-expand {
+    0% {
+        letter-spacing: -0.3em;
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
 
 .modal-restart {
     color: white;
     position: absolute;
-    top: 80%;
+    top: 100%;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -74,7 +131,7 @@
     outline: none;
     border: none;
     cursor: pointer;
-    font-size: 70px;
+    font-size: 100px;
     animation: focus-in-expand 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     word-spacing: 10px;
     text-shadow:
@@ -94,30 +151,18 @@
             content: "";
             position: absolute;
             left: -30%;
-            top: 10%;
-            width: 70px;
-            height: 70px;
+            top: -5%;
+            width: 55px;
+            height: 55px;
             background-image: url(../../assets/images/Game/FFVIIICursor01.png);
             background-size: cover;
             background-repeat: no-repeat;
         }
     }
+
+    font-family: 'menu';
 }
 
-@keyframes focus-in-expand {
-    0% {
-        letter-spacing: -0.5em;
-        -webkit-filter: blur(12px);
-        filter: blur(12px);
-        opacity: 0;
-    }
-
-    100% {
-        -webkit-filter: blur(0px);
-        filter: blur(0px);
-        opacity: 1;
-    }
-}
 
 .video img,
 .video video {
@@ -125,9 +170,10 @@
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    top: 0;
+    top: 20%;
     left: 0;
     right: 0;
+    z-index: 50;
 }
 
 .pic-hidden,

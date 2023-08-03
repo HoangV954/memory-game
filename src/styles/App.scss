@@ -1,0 +1,31 @@
+$font-path: "../assets/fonts";
+
+@font-face {
+    font-family: "logo-bold";
+    src: url("#{$font-path}/GalliardStd-Bold.ttf");
+}
+
+@font-face {
+    font-family: "logo";
+    src: url("#{$font-path}/GalliardStd-Roman.ttf");
+}
+
+@font-face {
+    font-family: "menu";
+    src: url("#{$font-path}/Final_Fantasy_VII.ttf");
+}
+
+@font-face {
+    font-family: "fancy-cap";
+    src: url("#{$font-path}/Schoensperger.otf");
+}
+
+@font-face {
+    font-family: "fancy-norm";
+    src: url("#{$font-path}/Carolus Magnus OT W03 Regular.ttf");
+}
+
+.main-content {
+    width: 100vw;
+    height: 100vh;
+}

@@ -1,3 +1,26 @@
 .game-board {
-    height: 100vh;
+    height: 100%;
+    position: relative;
+}
+
+.logo {
+    width: 130px;
+    height: 130px;
+}
+
+.logo-text {
+    background: linear-gradient(180deg, rgb(255, 247, 232) 15%, rgb(200, 180, 125) 50%, rgb(161, 126, 44), rgb(103, 81, 55) 70%), linear-gradient(360deg, rgb(97, 78, 51) 30%, rgb(200, 180, 125) 50%, rgba(255, 255, 255, 1) 10%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-size: 18px;
+    font-family: "logo";
+    text-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.01em;
+    user-select: none;
+
+    span {
+        font-size: 25px;
+        margin-right: -2px;
+        font-family: "logo-bold";
+    }
 }

@@ -4,6 +4,7 @@ import GameMenu from "./components/GameMenu/GameMenu";
 import Loading from "./components/Loading/Loading";
 import { GameContextProvider } from "./components/Context/GameContext";
 import { useState, useEffect } from "react";
+import "./styles/App.scss"
 
 /* Possible improvements: 
 - Separate character arrays (retrieved on difficulty) with original array using slice()
@@ -24,14 +25,21 @@ function App() {
     setIsStarted(true)
   }
 
+  const handleLogo = () => {
+    setIsStarted(false)
+    console.log(isStarted)
+  }
+
   return (
     <div className="App">
       {loading ? (
         <Loading />) : (
         <div className="main-content">
           <GameContextProvider>
-            <GameMenu handleStartGame={handleStartGame} />
-            <GameBoard />
+            {!isStarted ? (
+              <GameMenu handleStartGame={handleStartGame} />) : (
+              <GameBoard />
+            )}
             <Button name={"Hint"} />
           </GameContextProvider>
         </div>
@@ -42,7 +50,3 @@ function App() {
 
 export default App;
 
-/* {!isStarted ? (
-              <GameMenu handleStartGame={handleStartGame} />) : (
-              <GameBoard />
-            )} */
