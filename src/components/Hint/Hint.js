@@ -42,7 +42,7 @@ export default function Hint({ hintIsClicked, setHintIsClicked }) {
                                         cursor: '',
                                     }}
                                         onInit={(typewriter) => {
-                                            typewriter.typeString('Kweeehh!?..Maybe I shouldn\'t click the same card two times in a row..').start();
+                                            typewriter.typeString('Kweeehh!?..Maybe I shouldn\'t click the same card twice..').start();
                                         }} />
                                 </p>
                                 <IoClose onClick={() => {
