@@ -25,7 +25,12 @@ $font-path: "../assets/fonts";
     src: url("#{$font-path}/Carolus Magnus OT W03 Regular.ttf");
 }
 
-.main-content {
+.main-content,
+.App {
     width: 100vw;
     height: 100vh;
+}
+
+button {
+    cursor: pointer;
 }

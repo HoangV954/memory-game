@@ -1,0 +1,26 @@
+.score-board {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "fancy-norm";
+    font-size: 18px;
+    font-weight: bolder;
+    background-color: rgb(72, 55, 55);
+    border-radius: 50%;
+    border: 1px solid rgb(247, 213, 81);
+    color: rgb(247, 213, 81);
+    height: 130px;
+    width: 130px;
+    text-align: center;
+    bottom: 1%;
+    right: 5%;
+
+    p {
+        span {
+
+            font-family: "fancy-cap";
+        }
+    }
+}

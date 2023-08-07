@@ -10,7 +10,7 @@ import useSound from 'use-sound';
 import hoverSound from "../../assets/sound/sound-hover.wav";
 import selectSound from "../../assets/sound/sound-select.wav";
 
-export default function GameWon({ gameState }) {
+export default function GameWon({ handleLogo }) {
     const { gameWon, reset } = useContext(GameContext);
     const [videoEnded, setVideoEnded] = useState(false);
     const [hover, { stop }] = useSound(hoverSound, { volume: 0.2 });
@@ -37,7 +37,7 @@ export default function GameWon({ gameState }) {
                         volume={0.2}
                     />
                     <div className="logo-container" onClick={() => {
-                        gameState()
+                        handleLogo()
                     }}>
                         <img src={logo} alt="logo" className="logo" />
                         <p className="logo-text"><span>T</span>HE <span>M</span>EMORY <span>G</span>AME</p>

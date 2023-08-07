@@ -1,0 +1,66 @@
+.loading-container {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        position: absolute;
+        width: 100px;
+        bottom: 15%;
+    }
+
+    img.start {
+        height: 100px;
+        transform: rotateY(180deg);
+        animation: move-right 3s ease forwards;
+        left: 45%;
+    }
+
+    img.end {
+        height: 70px;
+        right: 10%;
+    }
+
+    p {
+        font-family: 'menu';
+        font-size: 150px;
+        color: rgb(253, 218, 82);
+        -webkit-text-stroke: 3px rgb(72, 55, 55);
+
+        span {
+            animation: bounce 0.5s ease infinite alternate;
+            position: relative;
+        }
+
+        $ani-delay: 0.1;
+        $max-iter: 10;
+
+        @for $i from 2 through $max-iter {
+            span:nth-of-type(#{$i}) {
+                animation-delay: #{$ani-delay}s;
+            }
+
+            $ani-delay: $ani-delay + 0.1;
+        }
+    }
+
+    @keyframes bounce {
+        100% {
+            top: -10px;
+        }
+    }
+
+    @keyframes move-right {
+        to {
+            left: 75%;
+        }
+    }
+
+}
