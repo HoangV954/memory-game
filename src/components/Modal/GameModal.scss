@@ -168,8 +168,7 @@
 }
 
 
-.video img,
-.video video {
+.video img {
     transition: opacity 1s ease;
     position: absolute;
     margin-left: auto;
@@ -192,6 +191,12 @@
 }
 
 .video-playing {
+    width: 100vw;
+    height: 100vh;
+    transform: scale(1.5);
+}
+
+/* .video-playing {
     animation: scaleVideo 10s linear;
 }
 
@@ -204,4 +209,4 @@
     100% {
         transform: scale(1);
     }
-}
+} */

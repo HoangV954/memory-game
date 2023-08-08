@@ -55,7 +55,7 @@ export default function GameWon({ handleLogo }) {
 
             <div className="video">
                 <video ref={videoRef} autoPlay width="100%"
-                    height="75%" className={videoEnded ? " video-hidden" : "video-playing video-visible"}
+                    height="100%" className={videoEnded ? " video-hidden" : "video-playing video-visible"}
                     onEnded={handleVideoEnded}>
                     <source src={winnerVid} type="video/mp4" />
                 </video>

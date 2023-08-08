@@ -46,8 +46,8 @@ export default function GameLost({ handleLogo }) {
 
             ) : (<></>)}
             <div className="video">
-                <video autoPlay muted width="100%"
-                    height="75%" className={videoEnded ? " video-hidden" : "video-playing video-visible"}
+                <video autoPlay muted width="100vw"
+                    height="100vh" className={videoEnded ? " video-hidden" : "video-playing video-visible"}
                     onEnded={handleVideoEnded}>
                     <source src={loserVid} type="video/mp4" />
                 </video>
